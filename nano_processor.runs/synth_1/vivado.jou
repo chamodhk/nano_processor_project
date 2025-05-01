@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu May  1 12:45:49 2025
+# Process ID: 24588
+# Current directory: C:/Users/Chamodh/Desktop/VivadoProjects/ToSubmit/nano_processor/nano_processor.runs/synth_1
+# Command line: vivado.exe -log Program_Counter.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Program_Counter.tcl
+# Log file: C:/Users/Chamodh/Desktop/VivadoProjects/ToSubmit/nano_processor/nano_processor.runs/synth_1/Program_Counter.vds
+# Journal file: C:/Users/Chamodh/Desktop/VivadoProjects/ToSubmit/nano_processor/nano_processor.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Program_Counter.tcl -notrace
