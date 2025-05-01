@@ -36,10 +36,10 @@ end Program_ROM;
 architecture Behavioral of Program_ROM is
     type rom_type is array (0 to 7) of std_logic_vector(11 downto 0);
         signal default_rom : rom_type := (
-            "000000000000",
-            "000000000001",
-            "000000000010",
-            "000000000011",
+            "000000000000", --0
+            "000000000001", --1
+            "000000000010", --2
+            "000000000011", --3
             "000000000100",
             "000000000101",
             "000000000110",
