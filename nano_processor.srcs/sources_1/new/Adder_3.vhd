@@ -47,39 +47,38 @@ architecture Behavioral of Adder_3 is
               C_out : out STD_LOGIC);
     end component;
     
-    signal carry: std_logic;
+    signal carry: std_logic_vector(1 downto 0);
             
 
 begin
 
     FA0 : FA
         port map
-            (A => in_value(2),
+            (A => in_value(0),
              B => '1',
              C_in => '0',
-             S => out_value(2),
-             C_out => carry);
+             S => out_value(0),
+             C_out => carry(0));
              
              
     FA1: FA
         port map
             (A => in_value(1),
              B => '0',
-             C_in => carry,
+             C_in => carry(0),
              S => out_value(1),
-             C_out => carry);
+             C_out => carry(1));
              
              
      FA2: FA
         port map
             (A => in_value(2),
              B => '0',
-             C_in => carry,
+             C_in => carry(1),
              S => out_value(2),
-             C_out => carry);
+             C_out => C_out);
              
-             
-             C_out <= carry;
+   
                           
              
    
