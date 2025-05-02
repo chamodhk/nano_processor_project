@@ -29,11 +29,7 @@ set_property target_language Verilog [current_project]
 set_property board_part digilentinc.com:basys3:part0:1.2 [current_project]
 set_property ip_output_repo c:/Users/Chamodh/Desktop/VivadoProjects/ToSubmit/nano_processor/nano_processor.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_vhdl -library xil_defaultlib {
-  C:/Users/Chamodh/Desktop/VivadoProjects/ToSubmit/nano_processor/nano_processor.srcs/sources_1/imports/new/FA.vhd
-  C:/Users/Chamodh/Desktop/VivadoProjects/ToSubmit/nano_processor/nano_processor.srcs/sources_1/imports/new/HA.vhd
-  C:/Users/Chamodh/Desktop/VivadoProjects/ToSubmit/nano_processor/nano_processor.srcs/sources_1/new/Adder_3.vhd
-}
+read_vhdl -library xil_defaultlib C:/Users/Chamodh/Desktop/VivadoProjects/ToSubmit/nano_processor/nano_processor.srcs/sources_1/new/Reg.vhd
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be
@@ -45,12 +41,12 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 set_param ips.enableIPCacheLiteLoad 0
 close [open __synthesis_is_running__ w]
 
-synth_design -top Adder_3 -part xc7a35tcpg236-1
+synth_design -top Reg -part xc7a35tcpg236-1
 
 
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef Adder_3.dcp
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file Adder_3_utilization_synth.rpt -pb Adder_3_utilization_synth.pb"
+write_checkpoint -force -noxdef Reg.dcp
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file Reg_utilization_synth.rpt -pb Reg_utilization_synth.pb"
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]
