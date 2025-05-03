@@ -22,21 +22,14 @@ create_project -in_memory -part xc7a35tcpg236-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir D:/Nano/nano_processor_project/nano_processor.cache/wt [current_project]
-set_property parent.project_path D:/Nano/nano_processor_project/nano_processor.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/Chamodh/Desktop/VivadoProjects/ToSubmit/nano_processor/nano_processor.cache/wt [current_project]
+set_property parent.project_path C:/Users/Chamodh/Desktop/VivadoProjects/ToSubmit/nano_processor/nano_processor.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo d:/Nano/nano_processor_project/nano_processor.cache/ip [current_project]
+set_property board_part digilentinc.com:basys3:part0:1.2 [current_project]
+set_property ip_output_repo c:/Users/Chamodh/Desktop/VivadoProjects/ToSubmit/nano_processor/nano_processor.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-<<<<<<<< HEAD:nano_processor.runs/synth_1/Reg.tcl
 read_vhdl -library xil_defaultlib C:/Users/Chamodh/Desktop/VivadoProjects/ToSubmit/nano_processor/nano_processor.srcs/sources_1/new/Reg.vhd
-========
-read_vhdl -library xil_defaultlib {
-  D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/FA.vhd
-  D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/HA.vhd
-  D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/RCA_4.vhd
-}
->>>>>>>> Nadil:nano_processor.runs/synth_1/RCA_4.tcl
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be
@@ -48,21 +41,12 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 set_param ips.enableIPCacheLiteLoad 0
 close [open __synthesis_is_running__ w]
 
-<<<<<<<< HEAD:nano_processor.runs/synth_1/Reg.tcl
 synth_design -top Reg -part xc7a35tcpg236-1
-========
-synth_design -top RCA_4 -part xc7a35tcpg236-1
->>>>>>>> Nadil:nano_processor.runs/synth_1/RCA_4.tcl
 
 
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-<<<<<<<< HEAD:nano_processor.runs/synth_1/Reg.tcl
 write_checkpoint -force -noxdef Reg.dcp
 create_report "synth_1_synth_report_utilization_0" "report_utilization -file Reg_utilization_synth.rpt -pb Reg_utilization_synth.pb"
-========
-write_checkpoint -force -noxdef RCA_4.dcp
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file RCA_4_utilization_synth.rpt -pb RCA_4_utilization_synth.pb"
->>>>>>>> Nadil:nano_processor.runs/synth_1/RCA_4.tcl
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]

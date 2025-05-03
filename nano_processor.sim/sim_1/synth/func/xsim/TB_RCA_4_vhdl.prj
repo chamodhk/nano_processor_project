@@ -1,6 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../../nano_processor.srcs/sim_1/new/TB_RCA_4.vhd" \
-
-# Do not sort compile order
-nosort

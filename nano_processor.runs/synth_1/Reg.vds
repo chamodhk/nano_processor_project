@@ -2,7 +2,6 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-<<<<<<<< HEAD:nano_processor.runs/synth_1/Reg.vds
 # Start of session at: Fri May  2 15:29:26 2025
 # Process ID: 25744
 # Current directory: C:/Users/Chamodh/Desktop/VivadoProjects/ToSubmit/nano_processor/nano_processor.runs/synth_1
@@ -12,22 +11,10 @@
 #-----------------------------------------------------------
 source Reg.tcl -notrace
 Command: synth_design -top Reg -part xc7a35tcpg236-1
-========
-# Start of session at: Sat May  3 21:04:02 2025
-# Process ID: 24640
-# Current directory: D:/Nano/nano_processor_project/nano_processor.runs/synth_1
-# Command line: vivado.exe -log RCA_4.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RCA_4.tcl
-# Log file: D:/Nano/nano_processor_project/nano_processor.runs/synth_1/RCA_4.vds
-# Journal file: D:/Nano/nano_processor_project/nano_processor.runs/synth_1\vivado.jou
-#-----------------------------------------------------------
-source RCA_4.tcl -notrace
-Command: synth_design -top RCA_4 -part xc7a35tcpg236-1
->>>>>>>> Nadil:nano_processor.runs/synth_1/RCA_4.vds
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-<<<<<<<< HEAD:nano_processor.runs/synth_1/Reg.vds
 INFO: Helper process launched with PID 14948 
 ---------------------------------------------------------------------------------
 Starting Synthesize : Time (s): cpu = 00:00:00 ; elapsed = 00:00:02 . Memory (MB): peak = 436.160 ; gain = 94.770
@@ -39,53 +26,17 @@ Finished Synthesize : Time (s): cpu = 00:00:00 ; elapsed = 00:00:02 . Memory (MB
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Finished Constraint Validation : Time (s): cpu = 00:00:00 ; elapsed = 00:00:03 . Memory (MB): peak = 490.332 ; gain = 148.941
-========
-INFO: Helper process launched with PID 21808 
----------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.980 . Memory (MB): peak = 355.559 ; gain = 99.250
----------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'RCA_4' [D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/RCA_4.vhd:53]
-INFO: [Synth 8-3491] module 'FA' declared at 'D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/FA.vhd:34' bound to instance 'FA0_0' of component 'FA' [D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/RCA_4.vhd:76]
-INFO: [Synth 8-638] synthesizing module 'FA' [D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/FA.vhd:42]
-INFO: [Synth 8-3491] module 'HA' declared at 'D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/HA.vhd:34' bound to instance 'HA_0' of component 'HA' [D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/FA.vhd:54]
-INFO: [Synth 8-638] synthesizing module 'HA' [D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/HA.vhd:41]
-INFO: [Synth 8-256] done synthesizing module 'HA' (1#1) [D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/HA.vhd:41]
-INFO: [Synth 8-3491] module 'HA' declared at 'D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/HA.vhd:34' bound to instance 'HA_1' of component 'HA' [D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/FA.vhd:61]
-INFO: [Synth 8-256] done synthesizing module 'FA' (2#1) [D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/FA.vhd:42]
-INFO: [Synth 8-3491] module 'FA' declared at 'D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/FA.vhd:34' bound to instance 'FA0_1' of component 'FA' [D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/RCA_4.vhd:84]
-INFO: [Synth 8-3491] module 'FA' declared at 'D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/FA.vhd:34' bound to instance 'FA0_2' of component 'FA' [D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/RCA_4.vhd:92]
-INFO: [Synth 8-3491] module 'FA' declared at 'D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/FA.vhd:34' bound to instance 'FA0_3' of component 'FA' [D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/RCA_4.vhd:100]
-INFO: [Synth 8-3491] module 'FA' declared at 'D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/FA.vhd:34' bound to instance 'FA1_0' of component 'FA' [D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/RCA_4.vhd:117]
-INFO: [Synth 8-3491] module 'FA' declared at 'D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/FA.vhd:34' bound to instance 'FA1_1' of component 'FA' [D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/RCA_4.vhd:125]
-INFO: [Synth 8-3491] module 'FA' declared at 'D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/FA.vhd:34' bound to instance 'FA1_2' of component 'FA' [D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/RCA_4.vhd:133]
-INFO: [Synth 8-3491] module 'FA' declared at 'D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/FA.vhd:34' bound to instance 'FA1_3' of component 'FA' [D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/RCA_4.vhd:141]
-INFO: [Synth 8-256] done synthesizing module 'RCA_4' (3#1) [D:/Nano/nano_processor_project/nano_processor.srcs/sources_1/imports/new/RCA_4.vhd:53]
-WARNING: [Synth 8-3331] design RCA_4 has unconnected port C_in
----------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:00 ; elapsed = 00:00:01 . Memory (MB): peak = 410.977 ; gain = 154.668
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:00 ; elapsed = 00:00:01 . Memory (MB): peak = 410.977 ; gain = 154.668
->>>>>>>> Nadil:nano_processor.runs/synth_1/RCA_4.vds
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-<<<<<<<< HEAD:nano_processor.runs/synth_1/Reg.vds
 Finished Loading Part and Timing Information : Time (s): cpu = 00:00:00 ; elapsed = 00:00:03 . Memory (MB): peak = 490.332 ; gain = 148.941
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
 Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:00 ; elapsed = 00:00:03 . Memory (MB): peak = 490.332 ; gain = 148.941
-========
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 410.977 ; gain = 154.668
----------------------------------------------------------------------------------
-INFO: [Device 21-403] Loading part xc7a35tcpg236-1
----------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 410.977 ; gain = 154.668
->>>>>>>> Nadil:nano_processor.runs/synth_1/RCA_4.vds
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -98,13 +49,8 @@ No constraint files found.
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
-<<<<<<<< HEAD:nano_processor.runs/synth_1/Reg.vds
 +---Registers : 
 	                4 Bit    Registers := 1     
-========
-+---XORs : 
-	   2 Input      1 Bit         XORs := 24    
->>>>>>>> Nadil:nano_processor.runs/synth_1/RCA_4.vds
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -112,21 +58,10 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
-<<<<<<<< HEAD:nano_processor.runs/synth_1/Reg.vds
 Module Reg 
 Detailed RTL Component Info : 
 +---Registers : 
 	                4 Bit    Registers := 1     
-========
-Module RCA_4 
-Detailed RTL Component Info : 
-+---XORs : 
-	   2 Input      1 Bit         XORs := 8     
-Module HA 
-Detailed RTL Component Info : 
-+---XORs : 
-	   2 Input      1 Bit         XORs := 1     
->>>>>>>> Nadil:nano_processor.runs/synth_1/RCA_4.vds
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -144,14 +79,8 @@ No constraint files found.
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-<<<<<<<< HEAD:nano_processor.runs/synth_1/Reg.vds
 ---------------------------------------------------------------------------------
 Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 591.273 ; gain = 249.883
-========
-WARNING: [Synth 8-3331] design RCA_4 has unconnected port C_in
----------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 537.918 ; gain = 281.609
->>>>>>>> Nadil:nano_processor.runs/synth_1/RCA_4.vds
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -164,11 +93,7 @@ No constraint files found.
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-<<<<<<<< HEAD:nano_processor.runs/synth_1/Reg.vds
 Finished Timing Optimization : Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 591.273 ; gain = 249.883
-========
-Finished Timing Optimization : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 537.918 ; gain = 281.609
->>>>>>>> Nadil:nano_processor.runs/synth_1/RCA_4.vds
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -180,11 +105,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-<<<<<<<< HEAD:nano_processor.runs/synth_1/Reg.vds
 Finished Technology Mapping : Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 591.273 ; gain = 249.883
-========
-Finished Technology Mapping : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 537.918 ; gain = 281.609
->>>>>>>> Nadil:nano_processor.runs/synth_1/RCA_4.vds
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -208,11 +129,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-<<<<<<<< HEAD:nano_processor.runs/synth_1/Reg.vds
 Finished IO Insertion : Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 591.273 ; gain = 249.883
-========
-Finished IO Insertion : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 537.918 ; gain = 281.609
->>>>>>>> Nadil:nano_processor.runs/synth_1/RCA_4.vds
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -225,11 +142,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-<<<<<<<< HEAD:nano_processor.runs/synth_1/Reg.vds
 Finished Renaming Generated Instances : Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 591.273 ; gain = 249.883
-========
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 537.918 ; gain = 281.609
->>>>>>>> Nadil:nano_processor.runs/synth_1/RCA_4.vds
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -241,41 +154,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-<<<<<<<< HEAD:nano_processor.runs/synth_1/Reg.vds
 Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 591.273 ; gain = 249.883
-========
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 537.918 ; gain = 281.609
->>>>>>>> Nadil:nano_processor.runs/synth_1/RCA_4.vds
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-<<<<<<<< HEAD:nano_processor.runs/synth_1/Reg.vds
 Finished Renaming Generated Ports : Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 591.273 ; gain = 249.883
-========
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 537.918 ; gain = 281.609
->>>>>>>> Nadil:nano_processor.runs/synth_1/RCA_4.vds
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-<<<<<<<< HEAD:nano_processor.runs/synth_1/Reg.vds
 Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 591.273 ; gain = 249.883
-========
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 537.918 ; gain = 281.609
->>>>>>>> Nadil:nano_processor.runs/synth_1/RCA_4.vds
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-<<<<<<<< HEAD:nano_processor.runs/synth_1/Reg.vds
 Finished Renaming Generated Nets : Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 591.273 ; gain = 249.883
-========
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 537.918 ; gain = 281.609
->>>>>>>> Nadil:nano_processor.runs/synth_1/RCA_4.vds
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -291,26 +188,16 @@ Report Cell Usage:
 +------+-----+------+
 |      |Cell |Count |
 +------+-----+------+
-<<<<<<<< HEAD:nano_processor.runs/synth_1/Reg.vds
 |1     |BUFG |     1|
 |2     |FDCE |     4|
 |3     |IBUF |     7|
 |4     |OBUF |     4|
-========
-|1     |LUT2 |     2|
-|2     |LUT4 |     2|
-|3     |LUT5 |     2|
-|4     |LUT6 |     2|
-|5     |IBUF |     9|
-|6     |OBUF |     6|
->>>>>>>> Nadil:nano_processor.runs/synth_1/RCA_4.vds
 +------+-----+------+
 
 Report Instance Areas: 
 +------+---------+-------+------+
 |      |Instance |Module |Cells |
 +------+---------+-------+------+
-<<<<<<<< HEAD:nano_processor.runs/synth_1/Reg.vds
 |1     |top      |       |    16|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
@@ -321,18 +208,6 @@ Synthesis Optimization Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 .
 Synthesis Optimization Complete : Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 591.273 ; gain = 249.883
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 7 Unisim elements for replacement
-========
-|1     |top      |       |    23|
-+------+---------+-------+------+
----------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 537.918 ; gain = 281.609
----------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 537.918 ; gain = 281.609
-Synthesis Optimization Complete : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 537.918 ; gain = 281.609
-INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 9 Unisim elements for replacement
->>>>>>>> Nadil:nano_processor.runs/synth_1/RCA_4.vds
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -340,7 +215,6 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-<<<<<<<< HEAD:nano_processor.runs/synth_1/Reg.vds
 11 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
 synth_design: Time (s): cpu = 00:00:03 ; elapsed = 00:00:16 . Memory (MB): peak = 705.633 ; gain = 376.184
@@ -349,13 +223,3 @@ INFO: [Common 17-1381] The checkpoint 'C:/Users/Chamodh/Desktop/VivadoProjects/T
 INFO: [runtcl-4] Executing : report_utilization -file Reg_utilization_synth.rpt -pb Reg_utilization_synth.pb
 report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.104 . Memory (MB): peak = 705.633 ; gain = 0.000
 INFO: [Common 17-206] Exiting Vivado at Fri May  2 15:29:47 2025...
-========
-25 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
-synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 638.648 ; gain = 394.996
-WARNING: [Constraints 18-5210] No constraint will be written out.
-INFO: [Common 17-1381] The checkpoint 'D:/Nano/nano_processor_project/nano_processor.runs/synth_1/RCA_4.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file RCA_4_utilization_synth.rpt -pb RCA_4_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 638.648 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat May  3 21:04:11 2025...
->>>>>>>> Nadil:nano_processor.runs/synth_1/RCA_4.vds
