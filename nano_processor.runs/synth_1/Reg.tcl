@@ -22,14 +22,14 @@ create_project -in_memory -part xc7a35tcpg236-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/Chamodh/Desktop/VivadoProjects/ToSubmit/nano_processor/nano_processor.cache/wt [current_project]
-set_property parent.project_path C:/Users/Chamodh/Desktop/VivadoProjects/ToSubmit/nano_processor/nano_processor.xpr [current_project]
+set_property webtalk.parent_dir {E:/New folder/nano_processor_project/nano_processor.cache/wt} [current_project]
+set_property parent.project_path {E:/New folder/nano_processor_project/nano_processor.xpr} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part digilentinc.com:basys3:part0:1.2 [current_project]
-set_property ip_output_repo c:/Users/Chamodh/Desktop/VivadoProjects/ToSubmit/nano_processor/nano_processor.cache/ip [current_project]
+set_property ip_output_repo {e:/New folder/nano_processor_project/nano_processor.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_vhdl -library xil_defaultlib C:/Users/Chamodh/Desktop/VivadoProjects/ToSubmit/nano_processor/nano_processor.srcs/sources_1/new/Reg.vhd
+read_vhdl -library xil_defaultlib {{E:/New folder/nano_processor_project/nano_processor.srcs/sources_1/new/Reg.vhd}}
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be

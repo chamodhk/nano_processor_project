@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/Chamodh/Desktop/VivadoProjects/ToSubmit/nano_processor/nano_processor.runs/synth_1'
+HD_PWD='E:/New folder/nano_processor_project/nano_processor.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
