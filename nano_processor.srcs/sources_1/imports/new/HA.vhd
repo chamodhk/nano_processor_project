@@ -2,7 +2,7 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 02/25/2025 01:41:16 PM
+-- Create Date: 02/25/2025 11:10:47 AM
 -- Design Name: 
 -- Module Name: HA - Behavioral
 -- Project Name: 
@@ -34,16 +34,14 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity HA is
     Port ( A : in STD_LOGIC;
            B : in STD_LOGIC;
-           C : out STD_LOGIC;
-           S : out STD_LOGIC);
+           S : out STD_LOGIC;
+           C : out STD_LOGIC);
 end HA;
 
 architecture Behavioral of HA is
 
 begin
-
-C <= A AND B;
 S <= A XOR B;
-
+C <= A AND B;
 
 end Behavioral;
