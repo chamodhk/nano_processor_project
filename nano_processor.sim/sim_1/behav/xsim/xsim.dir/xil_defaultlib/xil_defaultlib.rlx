@@ -2,7 +2,9 @@
 2018.2
 Jun 14 2018
 20:41:02
-D:/Nano/Master Proj/nano_processor_project/nano_processor.srcs/sim_1/new/TB_RCA_4.vhd,1746976560,vhdl,,,,tb_rca_4,,,,,,,,
-D:/Nano/Master Proj/nano_processor_project/nano_processor.srcs/sources_1/imports/new/FA.vhd,1746295294,vhdl,,,,fa,,,,,,,,
-D:/Nano/Master Proj/nano_processor_project/nano_processor.srcs/sources_1/imports/new/HA.vhd,1746295294,vhdl,,,,ha,,,,,,,,
-D:/Nano/Master Proj/nano_processor_project/nano_processor.srcs/sources_1/new/RCA_4.vhd,1746976440,vhdl,,,,rca_4,,,,,,,,
+C:/New folder/nano_processor_project/nano_processor.srcs/sim_1/new/TB_MUX_2_4.vhd,1747122827,vhdl,,,,tb_mux_2_4,,,,,,,,
+C:/New folder/nano_processor_project/nano_processor.srcs/sources_1/new/MUX_2_4.vhd,1747122444,vhdl,,,,mux_2_4,,,,,,,,
+E:/New folder/nano_processor_project/nano_processor.srcs/sim_1/new/TB_RCA_4.vhd,1746984508,vhdl,,,,tb_rca_4,,,,,,,,
+E:/New folder/nano_processor_project/nano_processor.srcs/sources_1/imports/new/FA.vhd,1746984508,vhdl,,,,fa,,,,,,,,
+E:/New folder/nano_processor_project/nano_processor.srcs/sources_1/imports/new/HA.vhd,1746984508,vhdl,,,,ha,,,,,,,,
+E:/New folder/nano_processor_project/nano_processor.srcs/sources_1/new/RCA_4.vhd,1746984508,vhdl,,,,rca_4,,,,,,,,
