@@ -61,10 +61,10 @@ UUT: MUX_2_4
 
 sim_proc : process
 begin
-    s <= '0';
+    s <= '0';   --selects first input
     wait for 100ns;
     
-    s <= '1';
+    s <= '1';   --selects the second input
     wait for 100ns;
     
     s <= '0';

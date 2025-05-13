@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='E:/New folder/nano_processor_project/nano_processor.runs/synth_1'
+HD_PWD='C:/New folder/nano_processor_project/nano_processor.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log RCA_4.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source RCA_4.tcl
+EAStep vivado -log MUX_2_4.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source MUX_2_4.tcl

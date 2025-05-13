@@ -42,10 +42,10 @@ architecture Behavioral of MUX_2_4 is
 
 begin
 
-process(D0, D1, S)
+process(D0, D1, S)  -- mux logic
 begin
     if (S ='0') then
-        D_out <= D0;
+        D_out <= D0;   
     else
         D_out <= D1;
     end if;
