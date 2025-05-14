@@ -1,13 +1,14 @@
-
-*** Running vivado
-    with args -log MUX_8_to_1.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source MUX_8_to_1.tcl -notrace
-
-
-****** Vivado v2018.2 (64-bit)
-  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
-  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
-
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Wed May 14 13:24:57 2025
+# Process ID: 19776
+# Current directory: D:/Nano/Master Proj/nano_processor_project/nano_processor.runs/impl_1
+# Command line: vivado.exe -log MUX_8_to_1.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source MUX_8_to_1.tcl -notrace
+# Log file: D:/Nano/Master Proj/nano_processor_project/nano_processor.runs/impl_1/MUX_8_to_1.vdi
+# Journal file: D:/Nano/Master Proj/nano_processor_project/nano_processor.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
 source MUX_8_to_1.tcl -notrace
 Command: link_design -top MUX_8_to_1 -part xc7a35tcpg236-1
 Design is defaulting to srcset: sources_1
