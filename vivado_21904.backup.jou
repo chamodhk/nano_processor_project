@@ -2,19 +2,19 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Wed May 14 10:10:23 2025
-# Process ID: 6320
+# Start of session at: Tue May 13 13:50:33 2025
+# Process ID: 21904
 # Current directory: C:/New folder/nano_processor_project
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13532 C:\New folder\nano_processor_project\nano_processor.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent19036 C:\New folder\nano_processor_project\nano_processor.xpr
 # Log file: C:/New folder/nano_processor_project/vivado.log
 # Journal file: C:/New folder/nano_processor_project\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project {C:/New folder/nano_processor_project/nano_processor.xpr}
-Scanning sources...
-Finished scanning sources
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.2/data/ip'.
-open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:27 . Memory (MB): peak = 897.516 ; gain = 162.676
 update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_simulation
+source TB_MUX_2_4.tcl
+close_sim
