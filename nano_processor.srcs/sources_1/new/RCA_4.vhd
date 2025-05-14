@@ -32,20 +32,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity RCA_4 is
-    Port ( A0 : in STD_LOGIC;
-           A1 : in STD_LOGIC;
-           A2 : in STD_LOGIC;
-           A3 : in STD_LOGIC;
-           B0 : in STD_LOGIC;
-           B1 : in STD_LOGIC;
-           B2 : in STD_LOGIC;
-           B3 : in STD_LOGIC;
+    Port ( A : in STD_LOGIC_VECTOR(3 downto 0);
+           B : in STD_LOGIC_VECTOR(3 downto 0);
            C_in : in STD_LOGIC;
            CTR : in STD_LOGIC;
-           S0 : out STD_LOGIC;
-           S1 : out STD_LOGIC;
-           S2 : out STD_LOGIC;
-           S3 : out STD_LOGIC;
+           S : out STD_LOGIC_VECTOR(3 downto 0);
            C_out : inout STD_LOGIC;
            Sign : inout STD_LOGIC);
 end RCA_4;
@@ -68,50 +59,50 @@ signal S4, S5, S6, S7 : std_logic;
 
 begin
     
-    B_0 <= B0 XOR CTR;
-    B_1 <= B1 XOR CTR;
-    B_2 <= B2 XOR CTR;
-    B_3 <= B3 XOR CTR;
+    B_0 <= B(0) XOR CTR;
+    B_1 <= B(1) XOR CTR;
+    B_2 <= B(2) XOR CTR;
+    B_3 <= B(3) XOR CTR;
 
     FA0_0: FA
         port map(
-            A => A0,
+            A => A(0),
             B => B_0,
             C_in => CTR,
-            S => S0,
+            S => S(0),
             C_out => FA0_C    
         );
     FA0_1: FA
         port map(
-            A => A1,
+            A => A(1),
             B => B_1,
             C_in => FA0_C,
-            S => S1,
+            S => S(1),
             C_out => FA1_C
         );
     FA0_2: FA
         port map(
-            A => A2,
+            A => A(2),
             B => B_2,
             C_in => FA1_C,
-            S => S2,
+            S => S(2),
             C_out => FA2_C
         );
     FA0_3: FA
     port map(
-        A => A3,
+        A => A(3),
         B => B_3,
         C_in => FA2_C,
-        S => S3,
+        S => S(3),
         C_out => C_out
     );
     
     Sign <= (NOT C_out) AND CTR;
     
-    B_4 <= B0 XOR Sign;
-    B_5 <= B1 XOR Sign;
-    B_6 <= B2 XOR Sign;
-    B_7 <= B3 XOR Sign;
+    B_4 <= B(0) XOR Sign;
+    B_5 <= B(1) XOR Sign;
+    B_6 <= B(2) XOR Sign;
+    B_7 <= B(3) XOR Sign;
 
     
     FA1_0: FA

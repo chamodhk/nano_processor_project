@@ -37,48 +37,37 @@ end TB_RCA_4;
 
 architecture Behavioral of TB_RCA_4 is
     component RCA_4 
-    port(A0 : in STD_LOGIC;
-         A1 : in STD_LOGIC;
-         A2 : in STD_LOGIC;
-         A3 : in STD_LOGIC;
-         B0 : in STD_LOGIC;
-         B1 : in STD_LOGIC;
-         B2 : in STD_LOGIC;
-         B3 : in STD_LOGIC;
+    port(A : in STD_LOGIC_VECTOR(3 downto 0);
+         B : in STD_LOGIC_VECTOR(3 downto 0);
          C_in : in STD_LOGIC;
          CTR : in STD_LOGIC;
-         S0 : out STD_LOGIC;
-         S1 : out STD_LOGIC;
-         S2 : out STD_LOGIC;
-         S3 : out STD_LOGIC;
+         S : out STD_LOGIC_VECTOR(3 downto 0);
          C_out : inout STD_LOGIC;
          Sign : inout STD_LOGIC);
     end component;
 
-signal A0, A1, A2, A3 : std_logic := '0';
-signal B0, B1, B2, B3 : std_logic := '0';
+signal A,B,S : std_logic_vector(3 downto 0);
 signal Ci : std_logic := '0';
 signal Ctr : std_logic := '0';
-signal S0, S1, S2, S3 : std_logic;
 signal Co,sign : std_logic;
     
     begin
     
         UUT: RCA_4 port map(
-            A0 => A0,
-            A1 => A1,
-            A2 => A2,
-            A3 => A3,
-            B0 => B0,
-            B1 => B1,
-            B2 => B2,
-            B3 => B3,
+            A(0) => A(0),
+            A(1) => A(1),
+            A(2) => A(2),
+            A(3) => A(3),
+            B(0) => B(0),
+            B(1) => B(1),
+            B(2) => B(2),
+            B(3) => B(3),
             C_in => Ci,
             CTR => Ctr,
-            S0 => S0,
-            S1 => S1,
-            S2 => S2,
-            S3 => S3,
+            S(0) => S(0),
+            S(1) => S(1),
+            S(2) => S(2),
+            S(3) => S(3),
             C_out => Co,
             Sign => sign
         );
@@ -86,26 +75,51 @@ signal Co,sign : std_logic;
         stim_proc: process
         begin
             -- Test Case 1: 0000 + 0000
-            A0 <= '0'; A1 <= '0'; A2 <= '0'; A3 <= '0';
-            B0 <= '0'; B1 <= '0'; B2 <= '0'; B3 <= '0';
-            Ctr <= '0'; Ci <= '0';
+            A(0) <= '0';
+            A(1) <= '0'; 
+            A(2) <= '0'; 
+            A(3) <= '0';
+            B(0) <= '0'; 
+            B(1) <= '0'; 
+            B(2) <= '0'; 
+            B(3) <= '0';
+            Ctr <= '0'; 
+            Ci <= '0';
             wait for 100 ns;
     
             -- Test Case 2: 1101 - 0011 (CTR=1 for subtraction perhaps)
-            A0 <= '1'; A1 <= '0'; A2 <= '1'; A3 <= '1';  -- A = 1101 (13)
-            B0 <= '0'; B1 <= '0'; B2 <= '1'; B3 <= '1';  -- B = 1100 (12)
+            A(0) <= '1'; 
+            A(1) <= '0'; 
+            A(2) <= '1'; 
+            A(3) <= '1';  -- A = 1101 (13)
+            B(0) <= '0'; 
+            B(1) <= '0'; 
+            B(2) <= '1'; 
+            B(3) <= '1';  -- B = 1100 (12)
             Ctr <= '1'; -- If your design subtracts when CTR = 1
             wait for 100 ns;
     
             -- Test Case 3: 0011 + 0001
-            A0 <= '1'; A1 <= '1'; A2 <= '0'; A3 <= '0';  -- A = 0011 (3)
-            B0 <= '1'; B1 <= '0'; B2 <= '0'; B3 <= '0';  -- B = 0001 (1)
+            A(0) <= '1'; 
+            A(1) <= '1'; 
+            A(2) <= '0'; 
+            A(3) <= '0';  -- A = 0011 (3)
+            B(0) <= '1'; 
+            B(1) <= '0'; 
+            B(2) <= '0'; 
+            B(3) <= '0';  -- B = 0001 (1)
             Ctr <= '0';
             wait for 100 ns;
     
             -- Test Case 4: 0000 - 1000
-            A0 <= '0'; A1 <= '0'; A2 <= '0'; A3 <= '0';  -- A = 0000 (0)
-            B0 <= '0'; B1 <= '0'; B2 <= '0'; B3 <= '1';  -- B = 1000 (8)
+            A(0) <= '0'; 
+            A(1) <= '0'; 
+            A(2) <= '0'; 
+            A(3) <= '0';  -- A = 0000 (0)
+            B(0) <= '0'; 
+            B(1) <= '0'; 
+            B(2) <= '0'; 
+            B(3) <= '1';  -- B = 1000 (8)
             Ctr <= '1'; -- Subtract mode
             wait for 100 ns;
     
