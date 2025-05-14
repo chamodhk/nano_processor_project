@@ -1,6 +1,6 @@
 Vivado Simulator 2018.2
 Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto c37cb37c031e4d7da3fbbac695debbb1 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot TB_MUX_8_to_1_behav xil_defaultlib.TB_MUX_8_to_1 -log elaborate.log 
+Running: D:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto c37cb37c031e4d7da3fbbac695debbb1 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot TB_Reg_Bank_behav xil_defaultlib.TB_Reg_Bank -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -12,6 +12,7 @@ Compiling package std.textio
 Compiling package ieee.std_logic_1164
 Compiling architecture behavioral of entity xil_defaultlib.Decoder_2_to_4 [decoder_2_to_4_default]
 Compiling architecture behavioral of entity xil_defaultlib.Decoder_3_to_8 [decoder_3_to_8_default]
-Compiling architecture behavioral of entity xil_defaultlib.MUX_8_to_1 [mux_8_to_1_default]
-Compiling architecture behavioral of entity xil_defaultlib.tb_mux_8_to_1
-Built simulation snapshot TB_MUX_8_to_1_behav
+Compiling architecture behavioral of entity xil_defaultlib.Reg [reg_default]
+Compiling architecture behavioral of entity xil_defaultlib.Reg_Bank [reg_bank_default]
+Compiling architecture behavioral of entity xil_defaultlib.tb_reg_bank
+Built simulation snapshot TB_Reg_Bank_behav
