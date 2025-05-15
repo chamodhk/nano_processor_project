@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/Ishan/nano_processor_project/nano_processor.runs/synth_1'
+HD_PWD='C:/dakshitha/nano_processor_project/nano_processor.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log MUX_8_Way_4_Bit.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source MUX_8_Way_4_Bit.tcl
+EAStep vivado -log PC_System.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source PC_System.tcl

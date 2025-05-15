@@ -48,8 +48,51 @@ architecture Behavioral of TB_PC_System is
     end component;
     
     
+    
+    signal reset, clk, jmp_flag : std_logic := '0';
+    signal jmp_addr, out_addr : std_logic_vector (2 downto 0) := "000";
+    
 begin
 
+   clock_process: process
+   begin
+        clk <= not clk;
+        wait for 50ns;
+        
+   end process;
+
+UUT : PC_System
+    port map (
+        reset => reset,
+        clk => clk,
+        jmp_flag => jmp_flag,
+        jmp_addr => jmp_addr,
+        out_addr => out_addr);
+        
+        
+
+   
+   sim_process : process
+   begin
+        reset <= '1';
+        wait for 50 ns;
+        reset <= '0';
+        wait for 50ns;
+        
+        jmp_addr <= "111";
+        jmp_flag <= '1';
+        wait for 100ns;
+        jmp_flag <= '0';
+        
+        
+        
+        
+        
+        wait;
+        
+    end process;
+        
+        
 
 
 

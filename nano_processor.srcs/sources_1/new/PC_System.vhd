@@ -97,6 +97,8 @@ begin
         En => '1',
         S => jmp_flag,
         Y => mux_out);
+        
+        out_addr <= pc_out;
    
 
 
