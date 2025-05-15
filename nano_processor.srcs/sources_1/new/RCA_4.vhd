@@ -36,9 +36,10 @@ entity RCA_4 is
            B : in STD_LOGIC_VECTOR(3 downto 0);
            C_in : in STD_LOGIC;
            CTR : in STD_LOGIC;
-           S : out STD_LOGIC_VECTOR(3 downto 0);
+           S : inout STD_LOGIC_VECTOR(3 downto 0);
            C_out : inout STD_LOGIC;
-           Sign : inout STD_LOGIC);
+           Sign : inout STD_LOGIC;
+           Zero : out STD_LOGIC);
 end RCA_4;
 
 architecture Behavioral of RCA_4 is
@@ -137,5 +138,7 @@ begin
         S => S7,
         C_out => open
     );
+    
+    Zero <= NOT(S(0) OR S(1) OR S(2) OR S(3));
            
 end Behavioral;
