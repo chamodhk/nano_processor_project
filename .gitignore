@@ -14,7 +14,7 @@
 *.backup.jou
 
 # Vivado cache and generated directories
-.cache/
+nano_processor.cache/
 .hw/
 .ip_user_files/
 .runs/
