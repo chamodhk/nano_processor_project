@@ -40,8 +40,7 @@ architecture Behavioral of TB_Program_Counter is
     component Program_Counter
         port (
             Clk : in STD_LOGIC;                         
-            Reset : in STD_LOGIC;                       
-            Load : in STD_LOGIC;                        
+            Reset : in STD_LOGIC;                                          
             PC_in : in STD_LOGIC_VECTOR (2 downto 0);   
             PC_out : out STD_LOGIC_VECTOR (2 downto 0));
             
@@ -66,7 +65,6 @@ UUT : Program_Counter
     port map (
         Clk => clk,
         reset => reset,
-        load => load,
         pc_in => pc_in,
         pc_out => pc_out);
         

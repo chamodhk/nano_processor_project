@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1747290065">
-  <File Type="PA-TCL" Name="Instruction_decoder.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="Instruction_decoder_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="Instruction_decoder_reports.tcl"/>
-  <File Type="RDS-RDS" Name="Instruction_decoder.vds"/>
-  <File Type="RDS-UTIL" Name="Instruction_decoder_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="Instruction_decoder_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="Instruction_decoder.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="Instruction_decoder_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="Instruction_decoder_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1747291486">
+  <File Type="PA-TCL" Name="Program_counter.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="Program_counter_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="Program_counter_reports.tcl"/>
+  <File Type="RDS-RDS" Name="Program_counter.vds"/>
+  <File Type="RDS-UTIL" Name="Program_counter_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="Program_counter_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="Program_counter.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="Program_counter_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="Program_counter_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/Program_counter.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/new/Decoder_2_to_4.vhd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../Vivado Projects/Lab_4/Lab_4.srcs/sources_1/new/Decoder_2_to_4.vhd"/>
         <Attr Name="ImportTime" Val="1741076468"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -21,6 +28,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/Instruction_decoder.vhd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -123,7 +131,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="Instruction_decoder"/>
+      <Option Name="TopModule" Val="Program_counter"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
