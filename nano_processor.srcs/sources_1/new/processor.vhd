@@ -39,7 +39,17 @@ entity processor is
            LED_out : out STD_LOGIC_VECTOR (3 downto 0);
            Disp_out : out STD_LOGIC_VECTOR (6 downto 0);
            Anode : out STD_LOGIC_VECTOR (3 downto 0);
-           Sign : out STD_LOGIC);
+           Sign : out STD_LOGIC;
+           ins : out std_logic_vector (11 downto 0);
+           Reg0 : out std_logic_vector (3 downto 0);
+           Reg1 : out std_logic_vector (3 downto 0);
+           Reg2 : out std_logic_vector (3 downto 0);
+           Reg3 : out std_logic_vector (3 downto 0);
+           Reg4 : out std_logic_vector (3 downto 0);
+           Reg5 : out std_logic_vector (3 downto 0);
+           Reg6 : out std_logic_vector (3 downto 0);
+           Reg7 : out std_logic_vector (3 downto 0)
+           );
 end processor;
 
 architecture Behavioral of processor is
@@ -121,9 +131,10 @@ architecture Behavioral of processor is
                B : in STD_LOGIC_VECTOR(3 downto 0);
                C_in : in STD_LOGIC;
                CTR : in STD_LOGIC;
-               S : out STD_LOGIC_VECTOR(3 downto 0);
+               S : inout STD_LOGIC_VECTOR(3 downto 0);
                C_out : inout STD_LOGIC;
-               Sign : inout STD_LOGIC);
+               Sign : inout STD_LOGIC;
+               Zero: out std_logic);
                
     end component;
     
@@ -156,6 +167,14 @@ architecture Behavioral of processor is
         
 
 begin
+
+    PC : PC_System
+    port map (
+        reset => Reset,
+        clk => clk,
+        jmp_addr => jmp_addr,
+        jmp_flag => jmp_flag,
+        out_addr => program_rom_address);
 
     P_ROM : Program_ROM 
     port map (
@@ -229,7 +248,8 @@ begin
         CTR => add_sub_sel,
         S => rca_out,
         C_out => rca_overflow,
-        Sign => rca_sign);
+        Sign => rca_sign,
+        Zero => Zero);
         
         
         
@@ -251,7 +271,19 @@ begin
         
   Overflow <= rca_overflow;
   Sign <= rca_sign;
- 
+  LED_out <= q7;
+  Anode <= "0000";
+  
+  Ins <= instruction_bus;
+  Reg0 <= q0;
+  Reg1 <= q1;
+  Reg2 <= q2;
+  Reg3 <= q3;
+  Reg4 <= q4;
+  Reg5 <= q5;
+  Reg6 <= q6;
+  Reg7 <= q7;
+
         
   
 
