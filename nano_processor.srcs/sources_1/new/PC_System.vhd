@@ -61,15 +61,43 @@ architecture Behavioral of PC_System is
    
    component MUX_2_Way_3_Bit
    port (
-    D : in bus_2_3_bits;
-             S : in STD_LOGIC;
-             EN : in STD_LOGIC;
-             Y : out STD_LOGIC_VECTOR (2 downto 0));
+    D0 : in STD_LOGIC_VECTOR (2 downto 0);
+              D1 : in STD_LOGIC_VECTOR (2 downto 0);
+              EN : in STD_LOGIC;
+              S : in STD_LOGIC;
+              Y : out STD_LOGIC_VECTOR (2 downto 0));
     end component;
+    
+    
+    signal mux_out, pc_out, adder_out : std_logic_vector ( 2 downto 0) :="000";
    
     
 
 begin
+
+    PC : program_counter
+    port map (  
+        Reset => Reset,
+        Clk => Clk,
+        PC_in => mux_out,
+        PC_out => pc_out);
+        
+        
+    Incrementer: Adder_3
+    port map (
+        in_value => pc_out,
+        out_value => adder_out,
+        c_out => open);
+        
+        
+    MUX: Mux_2_way_3_bit
+    port map (
+        D0 => adder_out, 
+        D1 => jmp_addr,
+        En => '1',
+        S => jmp_flag,
+        Y => mux_out);
+   
 
 
 end Behavioral;
