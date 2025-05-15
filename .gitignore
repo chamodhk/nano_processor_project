@@ -1,5 +1,5 @@
 # Vivado project files
-*.xpr
+#*.xpr
 *.xpr.user
 *.webtalk
 *.webtalk.*
