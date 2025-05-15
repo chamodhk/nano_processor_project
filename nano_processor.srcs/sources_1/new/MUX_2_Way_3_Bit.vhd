@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 05/15/2025 12:59:57 AM
+-- Create Date: 05/15/2025 01:08:00 AM
 -- Design Name: 
--- Module Name: MUX_2_Way_3_Bit - Behavioral
+-- Module Name: MUX_2_Way_3_Bit_tb - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -32,28 +32,53 @@ use work.bus_types.all;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity MUX_2_Way_3_Bit is
-    Port ( D : in bus_2_3_bits;
+entity MUX_2_Way_3_Bit_tb is
+--  Port ( );
+end MUX_2_Way_3_Bit_tb;
+
+architecture Behavioral of MUX_2_Way_3_Bit_tb is
+    component MUX_2_Way_3_Bit
+        Port ( D : in bus_2_3_bits;
            S : in STD_LOGIC;
            EN : in STD_LOGIC;
-           Y : out STD_LOGIC_VECTOR (2 downto 0));
-end MUX_2_Way_3_Bit;
+           Y : out STD_LOGIC_VECTOR (2 downto 0)
+           );
+    end component;
 
-architecture Behavioral of MUX_2_Way_3_Bit is
-
+    -- Testbench signals
+    signal D_tb  : bus_2_3_bits := (
+                0 => "101",  -- input 0
+                1 => "011"   -- input 1
+                  );
+    signal S_tb  : STD_LOGIC;
+    signal EN_tb : STD_LOGIC;
+    signal Y_tb  : STD_LOGIC_VECTOR(2 downto 0);
+    
 begin
-
-    process(D, S, EN)
+uut: MUX_2_Way_3_Bit
+    port map (
+        D   => D_tb,
+        S   => S_tb,
+        EN  => EN_tb,
+        Y   => Y_tb
+    );
+    
+    process
     begin
-        if EN = '1' then
-            if S = '1' then
-                Y <= D(1);
-            else
-                Y <= D(0);
-            end if;
-        else
-            Y <= (others => '0');
-        end if;
-    end process;
+        EN_tb <= '1';
+        
+        S_tb <= '0';
+        wait for 100 ns;
+        
+        S_tb <= '1';
+        wait for 100 ns;
+        
+        EN_tb <= '0';
+        wait for 100 ns;
+        
+        wait;
+   end process;
+        
+
 
 end Behavioral;
