@@ -96,7 +96,7 @@ begin
 
     Reg_2 : Reg
         port map (
-            En    => Reg_sel(2),
+            En    => Y(2),
             Clk   => Clk,
             Data  => Input_val,
             Q     => Q2,

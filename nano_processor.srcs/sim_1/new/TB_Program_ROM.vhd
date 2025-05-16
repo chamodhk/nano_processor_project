@@ -76,7 +76,7 @@ UUT : Program_ROM
  clk_process: process
  begin
     clk <= not clk;
-    wait for 50ns;
+    wait for 10ns;
  end process;
         
         
@@ -85,7 +85,12 @@ UUT : Program_ROM
     reset <= '1';
     wait for 100ns;
     reset <= '0';
-    wait for 100ns;
+    wait for 250ns;
+    
+    
+    reset <= '1';
+    wait for 50ns;
+    reset <= '0';
     
     wait;
 end process;

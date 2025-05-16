@@ -21,7 +21,6 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use work.bus_types.all;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -63,7 +62,6 @@ architecture Behavioral of PC_System is
    port (
     D0 : in STD_LOGIC_VECTOR (2 downto 0);
               D1 : in STD_LOGIC_VECTOR (2 downto 0);
-              EN : in STD_LOGIC;
               S : in STD_LOGIC;
               Y : out STD_LOGIC_VECTOR (2 downto 0));
     end component;
@@ -94,7 +92,6 @@ begin
     port map (
         D0 => adder_out, 
         D1 => jmp_addr,
-        En => '1',
         S => jmp_flag,
         Y => mux_out);
         

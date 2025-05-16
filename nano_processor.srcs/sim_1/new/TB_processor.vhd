@@ -55,6 +55,7 @@ architecture Behavioral of TB_processor is
                       Reg5 : out std_logic_vector (3 downto 0);
                       Reg6 : out std_logic_vector (3 downto 0);
                       Reg7 : out std_logic_vector (3 downto 0));
+                    
     end component; 
 
 
@@ -70,7 +71,7 @@ begin
     clock_process: process
     begin
         clk <= not clk;
-        wait for 50ns;
+        wait for 5ns;
     end process;
     
     UUT: processor
@@ -97,7 +98,7 @@ begin
     sim_process : process
     begin
         reset <= '1';
-        wait for 50ns;
+        wait for 10ns;
         reset <= '0';
         wait;
         

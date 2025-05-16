@@ -39,16 +39,7 @@ entity processor is
            LED_out : out STD_LOGIC_VECTOR (3 downto 0);
            Disp_out : out STD_LOGIC_VECTOR (6 downto 0);
            Anode : out STD_LOGIC_VECTOR (3 downto 0);
-           Sign : out STD_LOGIC;
-           ins : out std_logic_vector (11 downto 0);
-           Reg0 : out std_logic_vector (3 downto 0);
-           Reg1 : out std_logic_vector (3 downto 0);
-           Reg2 : out std_logic_vector (3 downto 0);
-           Reg3 : out std_logic_vector (3 downto 0);
-           Reg4 : out std_logic_vector (3 downto 0);
-           Reg5 : out std_logic_vector (3 downto 0);
-           Reg6 : out std_logic_vector (3 downto 0);
-           Reg7 : out std_logic_vector (3 downto 0)
+           Sign : out STD_LOGIC
            );
 end processor;
 
@@ -68,6 +59,12 @@ architecture Behavioral of processor is
                Jmp_flag : out STD_LOGIC;
                Jmp_Addr : out STD_LOGIC_VECTOR (2 downto 0));
                
+    end component;
+    
+    component Slow_Clk 
+    port (
+        Clk_in : in std_logic;
+        Clk_out : out std_logic);
     end component;
     
     
@@ -159,7 +156,7 @@ architecture Behavioral of processor is
  signal program_rom_address: std_logic_vector (2 downto 0);
  signal jmp_flags, immediate_val : std_logic_vector (3 downto 0);
  signal reg_sel_a, reg_sel_b, reg_en, jmp_addr : std_logic_vector (2 downto 0);
- signal load_sel, add_sub_sel, jmp_flag, rca_overflow, rca_sign : std_logic;
+ signal load_sel, add_sub_sel, jmp_flag, rca_overflow, rca_sign, slow_clock_out : std_logic;
  signal q0, q1, q2, q3, q4, q5, q6, q7, mux_a_out, mux_b_out, rca_out, mux_2_4_out : std_logic_vector (3 downto 0);
  
         
@@ -168,10 +165,16 @@ architecture Behavioral of processor is
 
 begin
 
+    clock : slow_clk
+    port map (
+        clk_in => clk,
+        clk_out => slow_clock_out);
+
+
     PC : PC_System
     port map (
         reset => Reset,
-        clk => clk,
+        clk => slow_clock_out,
         jmp_addr => jmp_addr,
         jmp_flag => jmp_flag,
         out_addr => program_rom_address);
@@ -194,6 +197,7 @@ begin
         Reg_en => reg_en,
         jmp_flag => jmp_flag,
         jmp_addr => jmp_addr );
+        
         
         
    Register_Bank : Reg_Bank
@@ -274,15 +278,6 @@ begin
   LED_out <= q7;
   Anode <= "0000";
   
-  Ins <= instruction_bus;
-  Reg0 <= q0;
-  Reg1 <= q1;
-  Reg2 <= q2;
-  Reg3 <= q3;
-  Reg4 <= q4;
-  Reg5 <= q5;
-  Reg6 <= q6;
-  Reg7 <= q7;
 
         
   

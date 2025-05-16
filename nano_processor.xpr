@@ -33,7 +33,7 @@
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSABoardId" Val="basys3"/>
     <Option Name="DSANumComputeUnits" Val="60"/>
-    <Option Name="WTXSimLaunchSim" Val="66"/>
+    <Option Name="WTXSimLaunchSim" Val="79"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -131,12 +131,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/bus_types.vhd">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/new/PC_System.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -179,14 +173,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/MUX_8_to_1.vhd">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../Vivado Projects/Lab_4/Lab_4.srcs/sources_1/new/MUX_8_to_1.vhd"/>
-          <Attr Name="ImportTime" Val="1741091070"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/new/Slow_Clk.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../Users/Chamodh/Desktop/VivadoProjects/ToSubmit/lab7/lab7.srcs/sources_1/new/Slow_Clk.vhd"/>
@@ -197,11 +183,19 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="processor"/>
+        <Option Name="TopModule" Val="Reg_Bank"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
       <Filter Type="Constrs"/>
+      <File Path="$PSRCDIR/constrs_1/imports/Downloads/Basys3Labs.xdc">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="C:/Users/Chamodh/Downloads/Basys3Labs.xdc"/>
+          <Attr Name="ImportTime" Val="1747373751"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="ConstrsType" Val="XDC"/>
       </Config>
