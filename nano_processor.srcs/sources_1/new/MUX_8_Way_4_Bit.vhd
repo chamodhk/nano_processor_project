@@ -33,7 +33,6 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity MUX_8_way_4_Bit is
     Port ( S : in STD_LOGIC_VECTOR (2 downto 0);
-           EN : in STD_LOGIC;
            D0 : in STD_LOGIC_VECTOR (3 downto 0);
            D1 : in STD_LOGIC_VECTOR (3 downto 0);
            D2 : in STD_LOGIC_VECTOR (3 downto 0);
@@ -48,14 +47,14 @@ end MUX_8_way_4_Bit;
 architecture Behavioral of MUX_8_way_4_Bit is
 
 begin
-    Y <= D0 when (EN = '1' AND S = "000") else
-         D1 when (EN = '1' AND S = "001") else
-         D2 when (EN = '1' AND S = "010") else
-         D3 when (EN = '1' AND S = "011") else
-         D4 when (EN = '1' AND S = "100") else
-         D5 when (EN = '1' AND S = "101") else
-         D6 when (EN = '1' AND S = "110") else
-         D7 when (EN = '1' AND S = "111") else
+    Y <= D0 when (S = "000") else
+         D1 when (S = "001") else
+         D2 when (S = "010") else
+         D3 when (S = "011") else
+         D4 when (S = "100") else
+         D5 when (S = "101") else
+         D6 when (S = "110") else
+         D7 when (S = "111") else
          (others => '0');
          
 end Behavioral;

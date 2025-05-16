@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Fri May 16 21:02:44 2025
+| Date             : Sat May 17 02:01:29 2025
 | Host             : Chamodh-Laptop running 64-bit major release  (build 9200)
 | Command          : report_power -file processor_power_routed.rpt -pb processor_power_summary_routed.pb -rpx processor_power_routed.rpx
 | Design           : processor
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.074        |
+| Total On-Chip Power (W)  | 0.076        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.002        |
+| Dynamic (W)              | 0.004        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.6         |
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      136 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       50 |     20800 |            0.24 |
+| Slice Logic    |    <0.001 |      116 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       39 |     20800 |            0.19 |
 |   CARRY4       |    <0.001 |        8 |      8150 |            0.10 |
-|   Register     |    <0.001 |       53 |     41600 |            0.13 |
+|   Register     |    <0.001 |       49 |     41600 |            0.12 |
 |   Others       |     0.000 |        5 |       --- |             --- |
-| Signals        |    <0.001 |      125 |       --- |             --- |
-| I/O            |    <0.001 |       19 |       106 |           17.92 |
+| Signals        |    <0.001 |      106 |       --- |             --- |
+| I/O            |     0.003 |       19 |       106 |           17.92 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.074 |          |           |                 |
+| Total          |     0.076 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Vccint    |       1.000 |     0.011 |       0.001 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
-| Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
+| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -140,14 +140,13 @@ Table of Contents
 +-----------------+-----------+
 | Name            | Power (W) |
 +-----------------+-----------+
-| processor       |     0.002 |
+| processor       |     0.004 |
 |   Clock         |    <0.001 |
 |   PC            |    <0.001 |
 |     PC          |    <0.001 |
 |   Register_Bank |    <0.001 |
-|     Reg_0       |     0.000 |
-|     Reg_1       |     0.000 |
-|     Reg_2       |    <0.001 |
+|     Reg_0       |    <0.001 |
+|     Reg_6       |    <0.001 |
 |     Reg_7       |     0.000 |
 +-----------------+-----------+
 

@@ -44,17 +44,7 @@ architecture Behavioral of TB_processor is
            Zero : out STD_LOGIC;
            LED_out : out STD_LOGIC_VECTOR (3 downto 0);
            Disp_out : out STD_LOGIC_VECTOR (6 downto 0);
-           Anode : out STD_LOGIC_VECTOR (3 downto 0);
-           Sign : out STD_LOGIC;
-           Ins : out std_logic_vector (11 downto 0);
-           Reg0 : out std_logic_vector (3 downto 0);
-                      Reg1 : out std_logic_vector (3 downto 0);
-                      Reg2 : out std_logic_vector (3 downto 0);
-                      Reg3 : out std_logic_vector (3 downto 0);
-                      Reg4 : out std_logic_vector (3 downto 0);
-                      Reg5 : out std_logic_vector (3 downto 0);
-                      Reg6 : out std_logic_vector (3 downto 0);
-                      Reg7 : out std_logic_vector (3 downto 0));
+           Anode : out STD_LOGIC_VECTOR (3 downto 0));
                     
     end component; 
 
