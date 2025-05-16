@@ -34,10 +34,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity RCA_4 is
     Port ( A : in STD_LOGIC_VECTOR(3 downto 0);
            B : in STD_LOGIC_VECTOR(3 downto 0);
-           C_in : in STD_LOGIC;
            CTR : in STD_LOGIC;
            S : inout STD_LOGIC_VECTOR(3 downto 0);
-           C_out : out STD_LOGIC;
+           Overflow : out STD_LOGIC;
            Zero : out STD_LOGIC);
 end RCA_4;
 
@@ -94,7 +93,7 @@ begin
         B => B_3,
         C_in => FA2_C,
         S => S(3),
-        C_out => C_out
+        C_out => Overflow
     );
     
     Zero <= NOT(S(0) OR S(1) OR S(2) OR S(3));

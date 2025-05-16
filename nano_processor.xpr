@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="38" Path="D:/Nano/Master 3 temp/nano_processor_project/nano_processor.xpr">
+<Project Version="7" Minor="38" Path="E:/Main/main 2/nano_processor_project/nano_processor.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="c37cb37c031e4d7da3fbbac695debbb1"/>
@@ -183,7 +183,7 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="RCA_4"/>
+        <Option Name="TopModule" Val="processor"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

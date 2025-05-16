@@ -36,11 +36,10 @@ entity processor is
            Clk : in STD_LOGIC;
            Overflow : out STD_LOGIC;
            Zero : out STD_LOGIC;
-           LED_out : out STD_LOGIC_VECTOR (3 downto 0);
-           Disp_out : out STD_LOGIC_VECTOR (6 downto 0);
-           Anode : out STD_LOGIC_VECTOR (3 downto 0);
-           Sign : out STD_LOGIC
-           );
+           led : out STD_LOGIC_VECTOR (3 downto 0);
+           seg : out STD_LOGIC_VECTOR (6 downto 0);
+           Anode : out STD_LOGIC_VECTOR (3 downto 0)
+                  );
 end processor;
 
 architecture Behavioral of processor is
@@ -57,7 +56,8 @@ architecture Behavioral of processor is
                Reg_Sel_B : out STD_LOGIC_VECTOR (2 downto 0);
                Reg_en : out STD_LOGIC_VECTOR (2 downto 0);
                Jmp_flag : out STD_LOGIC;
-               Jmp_Addr : out STD_LOGIC_VECTOR (2 downto 0));
+               Jmp_Addr : out STD_LOGIC_VECTOR (2 downto 0)
+               );
                
     end component;
     
@@ -123,15 +123,12 @@ architecture Behavioral of processor is
     
     component RCA_4
     port (
-    
-    A : in STD_LOGIC_VECTOR(3 downto 0);
-               B : in STD_LOGIC_VECTOR(3 downto 0);
-               C_in : in STD_LOGIC;
-               CTR : in STD_LOGIC;
-               S : inout STD_LOGIC_VECTOR(3 downto 0);
-               C_out : inout STD_LOGIC;
-               Sign : inout STD_LOGIC;
-               Zero: out std_logic);
+        A : in STD_LOGIC_VECTOR (3 downto 0);
+               B : in STD_LOGIC_VECTOR (3 downto 0);
+               CTR: in STD_LOGIC;
+               Overflow : out STD_LOGIC;
+               Zero : out STD_LOGIC;
+               S : inout STD_LOGIC_VECTOR (3 downto 0));
                
     end component;
     
@@ -164,8 +161,7 @@ architecture Behavioral of processor is
         
 
 begin
-
-    clock : slow_clk
+    Clock : Slow_clk
     port map (
         clk_in => clk,
         clk_out => slow_clock_out);
@@ -202,7 +198,7 @@ begin
         
    Register_Bank : Reg_Bank
    port map (
-        Clk => Clk,
+        Clk => slow_clock_out,
         Reg_sel => reg_en,
         Reset => Reset,
         Input_val => mux_2_4_out,
@@ -248,12 +244,10 @@ begin
    port map (
         A => mux_a_out,
         B => mux_b_out,
-        C_in => '0',
         CTR => add_sub_sel,
         S => rca_out,
-        C_out => rca_overflow,
-        Sign => rca_sign,
-        Zero => Zero);
+        Zero => Zero,
+        Overflow => rca_overflow);
         
         
         
@@ -269,15 +263,15 @@ begin
    LUT : LUT_16_7
    port map (
        address => q7,
-       data => disp_out);
+       data => seg);
         
 
         
   Overflow <= rca_overflow;
-  Sign <= rca_sign;
-  LED_out <= q7;
-  Anode <= "0000";
-  
+  led <= q7;
+  Anode <= "1110";
+ 
+
 
         
   

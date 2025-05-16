@@ -46,7 +46,7 @@ begin
     process (Clk_in) begin
         if (rising_edge(Clk_in)) then
             count <= count + 1;
-            if (count = 5) then -- for simulation purposes set this value to 5
+            if (count = 50000000) then -- for simulation purposes set this value to 5
                 clk_status <= not (clk_status);
                 clk_out <= clk_status;
                 count <= 1;
