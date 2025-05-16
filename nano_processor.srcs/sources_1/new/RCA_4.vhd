@@ -37,8 +37,7 @@ entity RCA_4 is
            C_in : in STD_LOGIC;
            CTR : in STD_LOGIC;
            S : inout STD_LOGIC_VECTOR(3 downto 0);
-           C_out : inout STD_LOGIC;
-           Sign : inout STD_LOGIC;
+           C_out : out STD_LOGIC;
            Zero : out STD_LOGIC);
 end RCA_4;
 
@@ -53,8 +52,8 @@ component FA
     );
 end component;
 
-signal  FA0_C, FA1_C, FA2_C, FA3_C, FA4_C, FA5_C, FA6_C, FA7_C: std_logic;
-signal B_0,B_1,B_2,B_3, B_4, B_5, B_6, B_7  : std_logic;
+signal  FA0_C, FA1_C, FA2_C, FA3_C : std_logic;
+signal B_0,B_1,B_2,B_3 : std_logic;
 signal S4, S5, S6, S7 : std_logic;
 
 
@@ -96,47 +95,6 @@ begin
         C_in => FA2_C,
         S => S(3),
         C_out => C_out
-    );
-    
-    Sign <= (NOT C_out) AND CTR;
-    
-    B_4 <= B(0) XOR Sign;
-    B_5 <= B(1) XOR Sign;
-    B_6 <= B(2) XOR Sign;
-    B_7 <= B(3) XOR Sign;
-
-    
-    FA1_0: FA
-        port map(
-            A => '0',
-            B => B_4,
-            C_in => Sign,
-            S => S4,
-            C_out => FA4_C    
-        );
-    FA1_1: FA
-        port map(
-            A => '0',
-            B => B_5,
-            C_in => FA4_C,
-            S => S5,
-            C_out => FA5_C
-        );
-    FA1_2: FA
-        port map(
-            A => '0',
-            B => B_6,
-            C_in => FA5_C,
-            S => S6,
-            C_out => FA6_C
-        );
-    FA1_3: FA
-    port map(
-        A => '0',
-        B => B_7,
-        C_in => FA6_C,
-        S => S7,
-        C_out => open
     );
     
     Zero <= NOT(S(0) OR S(1) OR S(2) OR S(3));

@@ -42,15 +42,14 @@ architecture Behavioral of TB_RCA_4 is
          C_in : in STD_LOGIC;
          CTR : in STD_LOGIC;
          S : inout STD_LOGIC_VECTOR(3 downto 0);
-         C_out : inout STD_LOGIC;
-         Sign : inout STD_LOGIC;
+         C_out : out STD_LOGIC;
          Zero : out STD_LOGIC);
     end component;
 
 signal A,B,S : std_logic_vector(3 downto 0);
 signal Ci : std_logic := '0';
 signal Ctr : std_logic := '0';
-signal Co,sign,zero : std_logic;
+signal Co,zero : std_logic;
     
     begin
     
@@ -70,11 +69,10 @@ signal Co,sign,zero : std_logic;
             S(2) => S(2),
             S(3) => S(3),
             C_out => Co,
-            Sign => sign,
             Zero => zero
         );
     
-        stim_proc: process
+       process
         begin
             -- Test Case 1: 0000 + 0000
             A(0) <= '0';
