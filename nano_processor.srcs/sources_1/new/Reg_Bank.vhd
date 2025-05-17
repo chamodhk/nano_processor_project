@@ -49,7 +49,6 @@ architecture Behavioral of Reg_Bank is
 
     component Decoder_3_to_8
         port (
-            En : in  std_logic;
             I  : in  std_logic_vector (2 downto 0);
             Y  : out std_logic_vector (7 downto 0)
         );
@@ -71,7 +70,6 @@ begin
 
     Decoder_0 : Decoder_3_to_8
         port map (
-            En => '1',
             I  => Reg_sel,
             Y  => y
         );

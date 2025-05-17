@@ -51,9 +51,9 @@ component FA
     );
 end component;
 
-signal  FA0_C, FA1_C, FA2_C, FA3_C : std_logic;
+signal  FA0_C, FA1_C, FA2_C: std_logic;
 signal B_0,B_1,B_2,B_3 : std_logic;
-signal S4, S5, S6, S7 : std_logic;
+
 
 
 begin

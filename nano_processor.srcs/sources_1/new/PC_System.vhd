@@ -53,8 +53,8 @@ architecture Behavioral of PC_System is
    component Adder_3
    port (
    in_value : in STD_LOGIC_VECTOR (2 downto 0);
-              out_value : out STD_LOGIC_VECTOR (2 downto 0);
-              c_out : out STD_LOGIC);
+              out_value : out STD_LOGIC_VECTOR (2 downto 0)
+              );
    end component;
    
    
@@ -84,8 +84,7 @@ begin
     Incrementer: Adder_3
     port map (
         in_value => pc_out,
-        out_value => adder_out,
-        c_out => open);
+        out_value => adder_out);
         
         
     MUX: Mux_2_way_3_bit

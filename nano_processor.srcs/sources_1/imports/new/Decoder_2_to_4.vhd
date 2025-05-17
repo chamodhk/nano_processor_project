@@ -40,7 +40,7 @@ end Decoder_2_to_4;
 architecture Behavioral of Decoder_2_to_4 is
 
 begin
-    Y(0)<= EN AND NOT(I(1)) AND NOT(I(0));
+    Y(0)<= EN AND (I(0) OR I(1));
     Y(1)<= EN AND NOT(I(1)) AND I(0);
     Y(2)<= EN AND I(1) AND NOT(I(0));
     Y(3)<= EN AND I(1) AND I(0);

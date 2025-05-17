@@ -33,8 +33,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity Adder_3 is
     Port ( in_value : in STD_LOGIC_VECTOR (2 downto 0);
-           out_value : out STD_LOGIC_VECTOR (2 downto 0);
-           c_out : out STD_LOGIC);
+           out_value : out STD_LOGIC_VECTOR (2 downto 0)
+          );
 end Adder_3;
 
 architecture Behavioral of Adder_3 is
@@ -76,7 +76,7 @@ begin
              B => '0',
              C_in => carry(1),
              S => out_value(2),
-             C_out => C_out);
+             C_out => open);
              
    
                           

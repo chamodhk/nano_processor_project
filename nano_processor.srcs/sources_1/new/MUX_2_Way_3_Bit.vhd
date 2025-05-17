@@ -42,6 +42,6 @@ architecture Behavioral of MUX_2_way_3_Bit is
 
 begin
     Y <= D0 when (S = '0') else
-         D1 when (S = '1') else
-         (others => '0');
+         D1 when (S = '1');
+         
 end Behavioral;
