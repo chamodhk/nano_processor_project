@@ -15,10 +15,10 @@
 
 # Vivado cache and generated directories
 nano_processor.cache/
-.hw/
-.ip_user_files/
-.runs/
-.sim/
+nano_processor.hw/
+nano_processor.ip_user_files/
+nano_processor.runs/
+nano_processor.sim/
 .srcs/
 .xsim/
 *.xsim.dir/

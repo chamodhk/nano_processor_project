@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="38" Path="E:/Main/main 2/nano_processor_project/nano_processor.xpr">
+<Project Version="7" Minor="38" Path="C:/FINAL/nano_processor_project/New folder/nano_processor_project/nano_processor.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="c37cb37c031e4d7da3fbbac695debbb1"/>
@@ -22,12 +22,12 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
-    <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
+    <Option Name="IPOutputRepo" Val="E:/Main/main 2/nano_processor_project/nano_processor.cache/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
     <Option Name="IPCachePermission" Val="write"/>
     <Option Name="EnableCoreContainer" Val="FALSE"/>
     <Option Name="CreateRefXciForCoreContainers" Val="FALSE"/>
-    <Option Name="IPUserFilesDir" Val="$PIPUSERFILESDIR"/>
+    <Option Name="IPUserFilesDir" Val="E:/Main/main 2/nano_processor_project/nano_processor.ip_user_files"/>
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSAVendor" Val="xilinx"/>
@@ -190,7 +190,7 @@
       <Filter Type="Constrs"/>
       <File Path="$PSRCDIR/constrs_1/imports/Downloads/Basys3Labs.xdc">
         <FileInfo>
-          <Attr Name="ImportPath" Val="C:/Users/Chamodh/Downloads/Basys3Labs.xdc"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../Users/Chamodh/Downloads/Basys3Labs.xdc"/>
           <Attr Name="ImportTime" Val="1747373751"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
