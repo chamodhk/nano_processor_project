@@ -41,6 +41,8 @@ entity RCA_4 is
 end RCA_4;
 
 architecture Behavioral of RCA_4 is
+
+
 component FA
     port(
     A: in std_logic;
@@ -49,6 +51,9 @@ component FA
     S: out std_logic;
     C_out: out std_logic
     );
+    
+    
+    
 end component;
 
 signal  FA0_C, FA1_C, FA2_C: std_logic;

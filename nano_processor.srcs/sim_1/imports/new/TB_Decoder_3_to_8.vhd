@@ -36,25 +36,23 @@ entity TB_Decoder_3_to_8 is
 end TB_Decoder_3_to_8;
 
 architecture Behavioral of TB_Decoder_3_to_8 is
+
 component Decoder_3_to_8
 port ( I : in STD_LOGIC_VECTOR (2 downto 0);
-       EN : in STD_LOGIC;
        Y : out STD_LOGIC_VECTOR (7 downto 0));
 end component;
+
 signal I : STD_LOGIC_VECTOR (2 downto 0);
-signal EN : STD_LOGIC;
 signal Y : STD_LOGIC_VECTOR (7 downto 0);
 
 begin
 UUT: Decoder_3_to_8
     port map(
     I => I,
-    EN => EN,
     Y => Y
     );
     
 process begin
-EN <= '1';
 I <= "101";
 
 wait for 100 ns;
@@ -79,7 +77,7 @@ wait for 100 ns;
 I <= "110";
 
 wait for 100 ns;
-EN <= '0';
+
 I <= "111";
 
 wait;

@@ -43,6 +43,7 @@ port( I : in STD_LOGIC_VECTOR (1 downto 0);
       EN : in STD_LOGIC;
       Y : out STD_LOGIC_VECTOR (3 downto 0));
 end component;
+
 signal I0, I1 : STD_LOGIC_VECTOR (1 downto 0);
 signal Y0, Y1 : STD_LOGIC_VECTOR (3 downto 0);
 signal en0, en1 : STD_LOGIC;

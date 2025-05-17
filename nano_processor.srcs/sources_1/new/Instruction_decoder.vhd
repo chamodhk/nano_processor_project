@@ -60,6 +60,7 @@ architecture Behavioral of Instruction_decoder is
  
 
 begin
+   
 	Decoder : Decoder_2_to_4
 	port map(
 		I => Instruction_bus(11 downto 10), 
@@ -77,7 +78,7 @@ begin
 	Reg_Sel_A <= Instruction_bus (6 downto 4);
 	Reg_en <= Instruction_bus (9 downto 7);
 	Immediate_val <= Instruction_bus (3 downto 0);
-	Jmp_flag <= JZR AND (not (Jump_check(0) or Jump_check(1) or Jump_check(2) or Jump_check(3)));
+	Jmp_flag <= JZR AND (NOT(Jump_check(0) or Jump_check(1) or Jump_check(2) or Jump_check(3)));
 	Jmp_Addr <= Instruction_bus (2 downto 0);
  
  

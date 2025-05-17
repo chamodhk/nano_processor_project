@@ -39,103 +39,63 @@ architecture Behavioral of TB_RCA_4 is
     component RCA_4 
     port(A : in STD_LOGIC_VECTOR(3 downto 0);
          B : in STD_LOGIC_VECTOR(3 downto 0);
-         C_in : in STD_LOGIC;
          CTR : in STD_LOGIC;
          S : inout STD_LOGIC_VECTOR(3 downto 0);
-         C_out : out STD_LOGIC;
+         Overflow: out STD_LOGIC;
          Zero : out STD_LOGIC);
     end component;
 
-signal A,B,S : std_logic_vector(3 downto 0);
-signal Ci : std_logic := '0';
-signal Ctr : std_logic := '0';
-signal Co,zero : std_logic;
+    signal a,b,s : std_logic_vector(3 downto 0);
+    signal ctr,overflow, zero : std_logic := '0';
+
     
     begin
     
-        UUT: RCA_4 port map(
-            A(0) => A(0),
-            A(1) => A(1),
-            A(2) => A(2),
-            A(3) => A(3),
-            B(0) => B(0),
-            B(1) => B(1),
-            B(2) => B(2),
-            B(3) => B(3),
-            C_in => Ci,
-            CTR => Ctr,
-            S(0) => S(0),
-            S(1) => S(1),
-            S(2) => S(2),
-            S(3) => S(3),
-            C_out => Co,
+        UUT: RCA_4
+        port map(
+            A => a,
+            B => b,
+            CTR =>ctr,
+            S => s,
+            Overflow => overflow,
             Zero => zero
-        );
+         );
     
-       process
-        begin
-            -- Test Case 1: 0000 + 0000
-            A(0) <= '0';
-            A(1) <= '0'; 
-            A(2) <= '0'; 
-            A(3) <= '0';
-            B(0) <= '0'; 
-            B(1) <= '0'; 
-            B(2) <= '0'; 
-            B(3) <= '0';
-            Ctr <= '0'; 
-            Ci <= '0';
-            wait for 100 ns;
-    
-            -- Test Case 2: 1101 - 0011 (CTR=1 for subtraction perhaps)
-            A(0) <= '1'; 
-            A(1) <= '0'; 
-            A(2) <= '1'; 
-            A(3) <= '1';  -- A = 1101 (13)
-            B(0) <= '0'; 
-            B(1) <= '0'; 
-            B(2) <= '1'; 
-            B(3) <= '1';  -- B = 1100 (12)
-            Ctr <= '1'; -- If your design subtracts when CTR = 1
-            wait for 100 ns;
-    
-            -- Test Case 3: 0011 + 0001
-            A(0) <= '1'; 
-            A(1) <= '1'; 
-            A(2) <= '0'; 
-            A(3) <= '0';  -- A = 0011 (3)
-            B(0) <= '1'; 
-            B(1) <= '0'; 
-            B(2) <= '0'; 
-            B(3) <= '0';  -- B = 0001 (1)
-            Ctr <= '0';
-            wait for 100 ns;
-    
-            -- Test Case 4: 0000 - 1000
-            A(0) <= '0'; 
-            A(1) <= '0'; 
-            A(2) <= '0'; 
-            A(3) <= '0';  -- A = 0000 (0)
-            B(0) <= '0'; 
-            B(1) <= '0'; 
-            B(2) <= '0'; 
-            B(3) <= '1';  -- B = 1000 (8)
-            Ctr <= '1'; -- Subtract mode
-            wait for 100 ns;
+       stim_process: process
+       begin
+       
+            --test addition
+            ctr <= '0';
+            a <= "0000";
+            b <= "0000";
+            wait for 100ns;
             
-            --Test Case 5: 1100 - 1100
-            A(0) <= '0';
-            A(1) <= '0';
-            A(2) <= '1';
-            A(3) <= '1';
-            B(0) <= '0';
-            B(1) <= '0';
-            B(2) <= '1';
-            B(3) <= '1';
-            Ctr <= '1';
-     
-    
-            wait;
-        end process;
+            a <= "0001";
+            b <= "0010";
+            wait for 100ns;
+            
+            a <= "0010";
+            b <= "0011";
+            wait for 100ns;
+            
+            
+            a <= "0011";
+            b <= "0100";
+            wait for 100ns;
+            
+            --test subtraction
+            
+            ctr <= '1';
+            
+            a <= "1111";
+            b <= "0101";
+            wait for 100ns;
+            
+            a <= "0111";
+            b <= "0111";
+            wait for 100ns; 
+                      
+          wait;
+       end process;
     
 end Behavioral;

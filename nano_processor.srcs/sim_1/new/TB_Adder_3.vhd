@@ -39,21 +39,21 @@ architecture Behavioral of TB_Adder_3 is
 
     component Adder_3
         port ( in_value : in STD_LOGIC_VECTOR (2 downto 0);
-               out_value : out STD_LOGIC_VECTOR (2 downto 0);
-               c_out : out STD_LOGIC);
+               out_value : out STD_LOGIC_VECTOR (2 downto 0)
+       );
                
     end component; 
     
     signal inVal, outVal : std_logic_vector( 2 downto 0);   
-    signal cout: std_logic;        
+            
 
 begin
 
     UUT: Adder_3
         port map (
             in_value => inVal,
-            out_value => outVal,
-            c_out => cout);
+            out_value => outVal
+       );
             
     
     simulation: process

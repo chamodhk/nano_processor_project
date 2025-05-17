@@ -42,8 +42,8 @@ architecture Behavioral of TB_processor is
            Clk : in STD_LOGIC;
            Overflow : out STD_LOGIC;
            Zero : out STD_LOGIC;
-           LED_out : out STD_LOGIC_VECTOR (3 downto 0);
-           Disp_out : out STD_LOGIC_VECTOR (6 downto 0);
+           led : out STD_LOGIC_VECTOR (3 downto 0);
+           seg : out STD_LOGIC_VECTOR (6 downto 0);
            Anode : out STD_LOGIC_VECTOR (3 downto 0));
                     
     end component; 
@@ -70,19 +70,10 @@ begin
         Clk => clk,
         Overflow => overflow,
         Zero => zero,
-        LED_out => led_out,
-        Disp_out => disp_out,
-        Anode => anode,
-        Sign => sign,
-        ins => ins,
-        Reg0 => q0,
-          Reg1 => q1,
-          Reg2 => q2,
-          Reg3 => q3,
-          Reg4 => q4,
-          Reg5 => q5,
-          Reg6 => q6,
-          Reg7 => q7);
+        led => led_out,
+        seg => disp_out,
+        Anode => anode
+   );
         
         
     sim_process : process
