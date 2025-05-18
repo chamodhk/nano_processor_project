@@ -1,0 +1,51 @@
+# Vivado project files
+#*.xpr
+*.xpr.user
+*.webtalk
+*.webtalk.*
+*.tcl
+*.xml
+
+# Vivado logs and journals
+*.log
+*.jou
+*.str
+*.backup.log
+*.backup.jou
+
+# Vivado cache and generated directories
+nano_processor.cache/
+nano_processor.hw/
+nano_processor.ip_user_files/
+nano_processor.runs/
+nano_processor.sim/
+.srcs/
+.xsim/
+*.xsim.dir/
+*.wdf
+*.wpc
+*.wdb
+
+# Simulation and waveform files
+*.vcd
+*.wlf
+*.vvp
+*.fst
+*.saif
+*.pb
+
+# Temporary and backup files
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+*.temp
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Python cache (if scripts are used)
+__pycache__/
+*.pyc

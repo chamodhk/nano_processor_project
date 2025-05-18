@@ -1,0 +1,27 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../final_final_final.srcs/sources_1/new/HA.vhd" \
+"../../../../final_final_final.srcs/sources_1/new/FA.vhd" \
+"../../../../final_final_final.srcs/sources_1/new/RCA_4.vhd" \
+"../../../../final_final_final.srcs/sources_1/new/Adder_Subtractor.vhd" \
+"../../../../final_final_final.srcs/sources_1/new/Decoder_2_4.vhd" \
+"../../../../final_final_final.srcs/sources_1/new/buses.vhd" \
+"../../../../final_final_final.srcs/sources_1/new/Decoder_3_8.vhd" \
+"../../../../final_final_final.srcs/sources_1/new/processor_components.vhd" \
+"../../../../final_final_final.srcs/sources_1/new/op_codes.vhd" \
+"../../../../final_final_final.srcs/sources_1/new/Instruction_Decoder.vhd" \
+"../../../../final_final_final.srcs/sources_1/new/MUX_2_4.vhd" \
+"../../../../final_final_final.srcs/sources_1/new/Load_Immediate_Selector.vhd" \
+"../../../../final_final_final.srcs/sources_1/new/MUX_8_4.vhd" \
+"../../../../final_final_final.srcs/sources_1/new/Program_ROM.vhd" \
+"../../../../final_final_final.srcs/sources_1/new/RCA_3.vhd" \
+"../../../../final_final_final.srcs/sources_1/new/Reg.vhd" \
+"../../../../final_final_final.srcs/sources_1/new/Reg_bank.vhd" \
+"../../../../final_final_final.srcs/sources_1/new/mux_2_3..vhd" \
+"../../../../final_final_final.srcs/sources_1/new/jump_pc_selector.vhd" \
+"../../../../final_final_final.srcs/sources_1/new/program_counter.vhd" \
+"../../../../final_final_final.srcs/sources_1/new/program_counter_incrementor.vhd" \
+"../../../../final_final_final.srcs/sim_1/new/TB_Nanoprocessor.vhd" \
+
+# Do not sort compile order
+nosort
