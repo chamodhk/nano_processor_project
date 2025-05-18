@@ -33,6 +33,16 @@ use work.buses.all;
 
 
 package processor_components is
+
+       component MUX_3_4
+            port (
+                A : in data_bus;
+                B : in data_bus;
+                C : in data_bus;
+                Sel : in std_logic_vector (1 downto 0);
+                Y : out data_bus);
+                
+      end component;
     
        component Instruction_decoder
             port (
@@ -45,16 +55,17 @@ package processor_components is
                 immediate_value: out data_bus;
                 Jump_flag: out std_logic;
                 Jump_address: out instruction_address;
-                Load_select: out std_logic);
+                Load_select: out std_logic_vector (1 downto 0);
+                Waiting_for_input_flag : out std_logic);
                 
-                
+ 
       end component;
       
       component program_counter_incrementor 
         port (
             in_address: in instruction_address;
+            increment_enable : in std_logic;
             out_address: out instruction_address);
-            
       end component;
       
       

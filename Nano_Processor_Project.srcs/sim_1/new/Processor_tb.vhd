@@ -1,77 +1,90 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;  -- Optional: depends on your signal operations
-use work.buses.all;
-use work.processor_components.all;
+use work.buses.all;               -- for data_bus, instruction_address, bus_4_bit
+use work.processor_components.all;-- for your sub-components (slow clock, decoder, etc.)
 
-entity Processor_tb is
-end Processor_tb;
+entity TB_Processor is
+--  No ports in a testbench
+end TB_Processor;
 
-architecture Behavioral of Processor_tb is
+architecture Behavioral of TB_Processor is
 
-    -- Component declaration
-    component Processor is
-        Port (
-            Clk : in std_logic;
-            Reset : in std_logic;
-            Overflow : out std_logic;
-            Zero : out std_logic;
-            Data : out data_bus;
-            seg : out std_logic_vector(6 downto 0)
-        );
-    end component;
+    -- Clock & Reset
+    signal Clock          : std_logic := '0';
+    signal Reset          : std_logic := '1';
 
-    -- Signals to connect to DUT
-    signal Clk_tb       : std_logic := '0';
-    signal Reset_tb     : std_logic := '0';
-    signal Overflow_tb  : std_logic;
-    signal Zero_tb      : std_logic;
-    signal Data_tb      : data_bus;
-    signal seg_tb       : std_logic_vector(6 downto 0);
+    -- Top-level I/O to DUT
+    signal Data           : data_bus;
+    signal Overflow, Zero : std_logic;
+    signal seg            : std_logic_vector(6 downto 0);
+    signal addr           : instruction_address;
+    signal anode          : bus_4_bit;
+    signal input_switches : data_bus := (others => '0');
+    signal input_ready    : std_logic := '0';
 
 begin
 
-    -- DUT instance
-    UUT: Processor
+    ----------------------------------------------------------------
+    -- Instantiate the Device Under Test
+    ----------------------------------------------------------------
+    DUT: entity work.Processor
         port map (
-            Clk => Clk_tb,
-            Reset => Reset_tb,
-            Overflow => Overflow_tb,
-            Zero => Zero_tb,
-            Data => Data_tb,
-            seg => seg_tb
+            Clk            => Clock,
+            Reset          => Reset,
+            Overflow       => Overflow,
+            Zero           => Zero,
+            Data           => Data,
+            seg            => seg,
+            addr           => addr,
+            anode          => anode,
+            input_switches => input_switches,
+            input_ready    => input_ready
         );
 
-    -- Clock generation (10 ns period = 100 MHz)
-    Clk_Process : process
+    ----------------------------------------------------------------
+    -- Clock generation: 50 MHz (20 ns period)
+    ----------------------------------------------------------------
+    clk_proc: process
     begin
-        Clk_tb <= '0';
-        wait for 5 ns;
-        Clk_tb <= '1';
-        wait for 5 ns;
-    end process;
+        while true loop
+            Clock <= '0'; wait for 10 ns;
+            Clock <= '1'; wait for 10 ns;
+        end loop;
+    end process clk_proc;
 
-    -- Stimulus process
-    Stim_Proc: process
+    ----------------------------------------------------------------
+    -- Reset pulse
+    ----------------------------------------------------------------
+    reset_proc: process
     begin
-        -- Initial reset
-        Reset_tb <= '1';
-        wait for 20 ns;
-        Reset_tb <= '0';
-
-        -- Wait for a while to observe behavior
-        wait for 500 ns;
-
-        -- Optionally force reset again mid-sim
-        Reset_tb <= '1';
-        wait for 20 ns;
-        Reset_tb <= '0';
-
-        -- Run longer
-        wait for 1000 ns;
-
-        -- Finish simulation
+        -- hold in reset for 4 clock cycles
+        Reset <= '1';
+        wait for 80 ns;
+        Reset <= '0';
         wait;
-    end process;
+    end process reset_proc;
+
+    ----------------------------------------------------------------
+    -- Stimulus: exercise an INP into R7
+    ----------------------------------------------------------------
+    stim_proc: process
+    begin
+        -- wait for reset release
+        wait until Reset = '0';
+        wait until rising_edge(Clock);
+
+        -- Issue an INP instruction at ROM address 0
+        -- (You should have your Program_ROM initialized accordingly.)
+        -- Now drive switches and pulse input_ready
+        input_switches <= "1010";      -- example data
+        wait for 15 ns;                -- sometime during the clock high
+        input_ready    <= '1';
+        wait for 20 ns;                -- one full clock
+        input_ready    <= '0';
+
+        -- Observe Data, seg, etc.
+        wait for 200 ns;
+        wait;  -- finish
+    end process stim_proc;
 
 end Behavioral;
