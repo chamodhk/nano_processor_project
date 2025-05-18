@@ -118,7 +118,7 @@ begin
             Jump_flag               => jmp_flag,
             Jump_address            => jmp_address,
             Load_select             => load_sel,
-            Waiting_for_input_flag  => internal_waiting
+            Waiting_flag  => internal_waiting
         );
 
     -- PC Incrementor

@@ -15,7 +15,7 @@ entity Instruction_Decoder is
         Jump_flag              : out std_logic;
         Jump_Address           : out instruction_address;
         Load_select            : out std_logic_vector (1 downto 0);
-        Waiting_for_input_flag : out std_logic  -- New output for input wait
+        Waiting_flag : out std_logic  -- New output for input wait
     );
 end Instruction_Decoder;
 
@@ -36,7 +36,7 @@ begin
         Jump_flag              <= '0';
         Jump_Address           <= (others => '0');
         Load_select            <= "00";
-        Waiting_for_input_flag <= '0';
+        Waiting_flag <= '0';
 
         case op_code is
 
@@ -64,9 +64,11 @@ begin
                 end if;
 
             when INP =>
-                Waiting_for_input_flag <= '1';
                 Register_Enable <= Instruction (9 downto 7);
                 Load_select <= "10";
+                
+            when HLT =>
+                Waiting_flag <= '1';
 
             when others =>
                 null;

@@ -56,7 +56,7 @@ package processor_components is
                 Jump_flag: out std_logic;
                 Jump_address: out instruction_address;
                 Load_select: out std_logic_vector (1 downto 0);
-                Waiting_for_input_flag : out std_logic);
+                Waiting_flag : out std_logic);
                 
  
       end component;
