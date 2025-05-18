@@ -1,5 +1,5 @@
 # Vivado project files
-#*.xpr
+
 *.xpr.user
 *.webtalk
 *.webtalk.*
@@ -14,11 +14,11 @@
 *.backup.jou
 
 # Vivado cache and generated directories
-nano_processor.cache/
-nano_processor.hw/
-nano_processor.ip_user_files/
-nano_processor.runs/
-nano_processor.sim/
+Nano_Processor_Project.cache/
+Nano_Processor_Project.hw/
+Nano_Processor_Project.ip_user_files/
+Nano_Processor_Project.runs/
+Nano_Processor_Project.sim/
 .srcs/
 .xsim/
 *.xsim.dir/
