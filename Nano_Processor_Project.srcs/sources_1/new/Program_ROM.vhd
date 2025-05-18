@@ -10,12 +10,12 @@ entity Program_ROM is
     port(ROM_address : in instruction_address;
          I: out instruction_bus
          ); 
---  Port ( );
+
 end Program_ROM;
 
 architecture Behavioral of Program_ROM is
 
-type rom_type is array (0 to 7) of std_logic_vector(11 downto 0);
+type rom_type is array (0 to 7) of instruction_bus;
 
     signal add_1_to_3 : rom_type := (
     "101110000000",
